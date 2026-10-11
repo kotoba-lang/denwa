@@ -1,10 +1,12 @@
 ;; denwa — portable .cljk; every dependency is first-party kotoba-lang.
-;; Sibling libraries of this project are :local/root until they are published;
-;; published ones are pinned by sha.
+;; Every dependency is pinned by a sha reachable from its upstream main.
 {:paths ["src"]
- :deps {io.github.kotoba-lang/nafuda {:local/root "../nafuda"}
-        io.github.kotoba-lang/tsunagi {:local/root "../tsunagi"}
-        io.github.kotoba-lang/shamir {:local/root "../shamir"}
+ :deps {io.github.kotoba-lang/nafuda {:git/url "https://github.com/kotoba-lang/nafuda.git"
+                              :git/sha "967636d1d7bf2d1047c61308763f43cb1c862921"}
+        io.github.kotoba-lang/tsunagi {:git/url "https://github.com/kotoba-lang/tsunagi.git"
+                               :git/sha "5942cc868e2cd269f72cd604b00b330cba93dfb6"}
+        io.github.kotoba-lang/shamir {:git/url "https://github.com/kotoba-lang/shamir.git"
+                              :git/sha "fdd87fdd30e6ec566723095a487eb96e28a150af"}
         io.github.kotoba-lang/edn {:git/url "https://github.com/kotoba-lang/edn.git"
                            :git/sha "b164f5cb4587f50c05446361905743f902cd6932"}
         io.github.kotoba-lang/bytes {:git/url "https://github.com/kotoba-lang/bytes.git"
@@ -27,9 +29,12 @@
                              :git/sha "550755327b4d43eff757f80e824278e6fac7e8c6"}}
  :aliases
  {:test {:extra-paths ["test"]
-         :extra-deps {io.github.kotoba-lang/kowane {:local/root "../kowane"}
-                       io.github.kotoba-lang/yobidashi {:local/root "../yobidashi"}
-                       io.github.kotoba-lang/monban {:local/root "../monban"}
+         :extra-deps {io.github.kotoba-lang/kowane {:git/url "https://github.com/kotoba-lang/kowane.git"
+                              :git/sha "ba6afed6d5d54362b018bb519d3fd4046e01a23c"}
+                       io.github.kotoba-lang/yobidashi {:git/url "https://github.com/kotoba-lang/yobidashi.git"
+                                 :git/sha "ddb8cf7a2404fb9e273a578a3ca61e9cce3ea08e"}
+                       io.github.kotoba-lang/monban {:git/url "https://github.com/kotoba-lang/monban.git"
+                              :git/sha "4d43af6ad54dee01d238b1e852d5bb865d733c22"}
                        io.github.kotoba-lang/moyai-ledger {:git/url "https://github.com/kotoba-lang/moyai-ledger.git"
                                     :git/sha "60f79f5bd586a99234d51794148ee5eb50427ad7"}
                       io.github.cognitect-labs/test-runner
